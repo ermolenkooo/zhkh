@@ -3771,11 +3771,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.Android\\zhkh_mobile.Android.csproj",
+      "projectUniqueName": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.Android\\zhkh_mobile.Android.csproj",
       "projectName": "zhkh_mobile.Android",
-      "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.Android\\zhkh_mobile.Android.csproj",
+      "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.Android\\zhkh_mobile.Android.csproj",
       "packagesPath": "C:\\Users\\dasha\\.nuget\\packages\\",
-      "outputPath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.Android\\obj\\",
+      "outputPath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3797,8 +3797,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj": {
-              "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj"
+            "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj": {
+              "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj"
             }
           }
         }
@@ -3811,21 +3811,9 @@
             "target": "Package",
             "version": "[8.0.0, )"
           },
-          "System.Text.Json": {
-            "target": "Package",
-            "version": "[8.0.0, )"
-          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.7.0, )"
-          },
-          "Xamarin.Essentials": {
-            "target": "Package",
-            "version": "[1.7.0, )"
-          },
-          "Xamarin.Forms": {
-            "target": "Package",
-            "version": "[5.0.0.2196, )"
           },
           "Xamarin.Forms": {
             "target": "Package",

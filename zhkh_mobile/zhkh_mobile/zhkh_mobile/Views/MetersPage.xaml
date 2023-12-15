@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zhkh_mobile.Views.MetersPage"
+             xmlns:vm="clr-namespace:zhkh_mobile.ViewModels"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="True"
+             BackgroundColor="#DDD0C8">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="Black" VerticalOptions="Start" Padding="15,10">
+                <Image Source="arrow.png" HeightRequest="45">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Margin="10,0" Text="Счётчики" FontSize="30" FontAttributes="Bold" TextColor="#DDD0C8" VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+            <StackLayout Margin="15,0" >
+                <ListView x:Name="list" ItemsSource="{Binding Meters}" HasUnevenRows="True" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                            <Image HeightRequest="41" VerticalOptions="Center">
+                                                <Image.Triggers>
+                                                    <DataTrigger Binding="{Binding Id_category}" Value="1" TargetType="Image">
+                                                        <Setter Property="Source" Value="lamp.png"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Id_category}" Value="2" TargetType="Image">
+                                                        <Setter Property="Source" Value="category1.png"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Id_category}" Value="3" TargetType="Image">
+                                                        <Setter Property="Source" Value="category1.png"/>
+                                                    </DataTrigger>
+                                                </Image.Triggers>
+                                            </Image>
+                                            <StackLayout VerticalOptions="Center">
+                                                <Label Text="{Binding Category.Name}" FontSize="26" TextColor="Black"/>
+                                                <Label Margin="0,-7,0,0" Text="{Binding Number}" FontSize="20" TextColor="Black"/>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="Center" Margin="0,6,0,0">
+                                                <Label HorizontalOptions="End" Text="{Binding TextReading}" FontSize="20" TextColor="Black"/>
+                                                <Label Margin="0,-7,0,0" HorizontalOptions="End" Text="{Binding TextDate}" FontSize="20" TextColor="Black"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout BackgroundColor="Black" Margin="0,5">
+                                            <Entry Margin="10,0" PlaceholderColor="#DDD0C8" FontSize="30" Placeholder="Текущие показания" Text="{Binding NewReading}" TextColor="#DDD0C8" BackgroundColor="Transparent"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Margin="20,20" Text="Отправить показания" TextColor="#DDD0C8" TextTransform="None" FontSize="27" BackgroundColor="Black" CornerRadius="40" Command="{Binding SendCommand}"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

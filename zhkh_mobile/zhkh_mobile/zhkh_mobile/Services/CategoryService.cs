@@ -22,5 +22,16 @@ namespace zhkh_mobile.Services
                 default: return null;
             }
         }
+
+        public async Task<MeterCategory> GetMeterCategory(int id)
+        {
+            switch (id)
+            {
+                case 1: return new MeterCategory { Id = 1, Name = "Электроэнергия", Unit = "кВт/ч" };
+                case 2: return new MeterCategory { Id = 2, Name = "Холодная вода", Unit = "м³" };
+                case 3: return new MeterCategory { Id = 3, Name = "Горячая вода", Unit = "м³" };
+                default: return null;
+            }
+        }
     }
 }

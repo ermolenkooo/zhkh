@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JkEGRBYrDMtwATZPUZqzTSvmsF7ff0b4n10EANQ49Ksd0IRdSEnJ7dfwBerqmWATLVlSy0UgksQoUu4H4TJalg==",
+  "dgSpecHash": "PMcMubmJB2ZUKBKo8Wt588MCeY9k1NyXeJgQ6fx07fUqSh3LXM+ldNbQXtEzfkfVpm9p2o/pfuLXO1QzQcacjQ==",
   "success": true,
-  "projectFilePath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.Android\\zhkh_mobile.Android.csproj",
+  "projectFilePath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.Android\\zhkh_mobile.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dasha\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",

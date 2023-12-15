@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj": {}
+    "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj": {}
   },
   "projects": {
-    "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj": {
+    "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj",
+        "projectUniqueName": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj",
         "projectName": "zhkh_mobile",
-        "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj",
+        "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj",
         "packagesPath": "C:\\Users\\dasha\\.nuget\\packages\\",
-        "outputPath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\obj\\",
+        "outputPath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

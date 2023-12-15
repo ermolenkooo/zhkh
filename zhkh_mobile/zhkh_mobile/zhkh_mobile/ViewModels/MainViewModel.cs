@@ -140,7 +140,7 @@ namespace zhkh_mobile.ViewModels
 
         private async void OnMetersClicked(object obj)
         {
-
+            await Navigation.PushAsync(new MetersPage(Address.Id));
         }
 
         private async void OnPayClicked(object obj)

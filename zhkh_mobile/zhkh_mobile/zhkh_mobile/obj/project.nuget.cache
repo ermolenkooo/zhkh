@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fONvADG0XLGk8Ydgptb232i0NA4Hm9hjO+fIXkwa2siSCORtkvIsf7P9klx4lxzXe/U9Rbo/8bunLVymdPYnUQ==",
+  "dgSpecHash": "MkCQ6f2eU4thmQlBN3zhAWFgwKDYiZnqWrqfePDG8Ylpwg8lFO3o7+Rh4U40+Z6+wMvrcRsuz1eZMs1QIHjLHw==",
   "success": true,
-  "projectFilePath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj",
+  "projectFilePath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dasha\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

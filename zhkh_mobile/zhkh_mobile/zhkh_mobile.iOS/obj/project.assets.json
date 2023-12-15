@@ -1749,11 +1749,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.iOS\\zhkh_mobile.iOS.csproj",
+      "projectUniqueName": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.iOS\\zhkh_mobile.iOS.csproj",
       "projectName": "zhkh_mobile.iOS",
-      "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.iOS\\zhkh_mobile.iOS.csproj",
+      "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.iOS\\zhkh_mobile.iOS.csproj",
       "packagesPath": "C:\\Users\\dasha\\.nuget\\packages\\",
-      "outputPath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.iOS\\obj\\",
+      "outputPath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1775,8 +1775,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj": {
-              "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj"
+            "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj": {
+              "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.csproj"
             }
           }
         }
