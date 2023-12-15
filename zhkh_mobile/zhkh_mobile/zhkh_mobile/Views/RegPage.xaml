@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:zhkh_mobile.ViewModels"
+             x:Class="zhkh_mobile.Views.RegPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="#DDD0C8">
+
+    <ContentPage.BindingContext>
+        <vm:RegViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="End">
+
+            <StackLayout>
+                <Label Text="Регистрация" FontSize="30" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"/>
+                <Label Text="{Binding Warning}" FontSize="18" TextColor="Red" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                <Entry PlaceholderColor="Black" Placeholder="Введите номер телефона" Text="{Binding Phone}" TextColor="Black" Margin="20,0,20,10"/>
+                <Entry PlaceholderColor="Black" Placeholder="Придумайте пароль" Text="{Binding Password}" IsPassword="True" TextColor="Black" Margin="20,0,20,10"/>
+                <Entry PlaceholderColor="Black" Placeholder="Повторите пароль" Text="{Binding Password2}" IsPassword="True" TextColor="Black" Margin="20,0,20,10"/>
+                <Button Margin="20,0,20,10" Text="Зарегистрироваться" TextColor="White" TextTransform="None" FontSize="27" BackgroundColor="Black" CornerRadius="40" Command="{Binding RegCommand}" Background="Black"/>
+                <Button Margin="20,0,20,10" Text="Войти" TextColor="Black" TextTransform="None" FontSize="27" CornerRadius="40" BackgroundColor="Transparent" BorderWidth="2" BorderColor="Black" Command="{Binding LoginCommand}" Background="Transparent"/>
+            </StackLayout>
+
+            <Image Source="city.png"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "XsdZ/3EukXgpdKX7WHIgIEYvGyHxObGu4yISlMhNiWeFxqXUY9fvZRcw3OKYvb4wmIdDP6synNr5QUsOJgi5Iw==",
+  "success": true,
+  "projectFilePath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_server\\zhkh_server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dasha\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.0.25.124:8080/api/odata'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

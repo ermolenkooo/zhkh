@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\zhkh_server.props" />
+</Project>

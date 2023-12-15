@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:zhkh_mobile.ViewModels"
+             x:Class="zhkh_mobile.Views.PayPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="True"
+             BackgroundColor="#DDD0C8">
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="Black" VerticalOptions="Start" Padding="15,10">
+                <Image Source="arrow.png" HeightRequest="45">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Margin="10,0" Text="Оплата" FontSize="30" FontAttributes="Bold" TextColor="#DDD0C8" VerticalTextAlignment="Center"/>
+            </StackLayout>
+            
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Frame CornerRadius="15" BackgroundColor="#A9A9A9" Margin="20" Padding="12,10">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10">
+                            <Image Source="mastercard.png" WidthRequest="100" HeightRequest="40" Margin="-15,0,-20,0"/>
+                            <Image Source="visa.png" WidthRequest="100"/>
+                            <Image Source="mir.png" WidthRequest="100"/>
+                        </StackLayout>
+
+                        <Label Text="Номер карты" FontSize="18" FontAttributes="None" TextColor="Black"/>
+                        <Frame BackgroundColor="LightGray" Padding="0" CornerRadius="10">
+                            <Entry HorizontalTextAlignment="Center" PlaceholderColor="Black" FontSize="24" Placeholder="0000 0000 0000 0000" Text="{Binding Number}" TextColor="Black" BackgroundColor="Transparent"/>
+                        </Frame>
+
+                        <Label Text="Срок действия" FontSize="18" FontAttributes="None" TextColor="Black"/>
+                        <Frame BackgroundColor="LightGray" Padding="0" CornerRadius="10" HorizontalOptions="StartAndExpand">
+                            <Entry HorizontalTextAlignment="Center" PlaceholderColor="Black" FontSize="24" Placeholder="ММ/ГГГГ" Text="{Binding Date}" TextColor="Black" BackgroundColor="Transparent"/>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+
+                <Button Margin="20,0" Text="{Binding TextButton}" TextColor="#DDD0C8" TextTransform="None" FontSize="27" BackgroundColor="Black" CornerRadius="40" Command="{Binding PayCommand}">
+                    <Button.Triggers>
+                        <DataTrigger Binding="{Binding Show}" Value="true" TargetType="Button">
+                            <Setter Property="IsVisible" Value="true"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Show}" Value="false" TargetType="Button">
+                            <Setter Property="IsVisible" Value="false"/>
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+            </StackLayout>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

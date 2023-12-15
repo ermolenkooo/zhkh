@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zhkh_mobile.Views.MainPage"
+             xmlns:vm="clr-namespace:zhkh_mobile.ViewModels"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="True"
+             BackgroundColor="#DDD0C8">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="Black" VerticalOptions="Start" Padding="15,10">
+                <Image Source="home.png" HeightRequest="45"/>
+                <Label Margin="10,0" Text="Мои услуги" FontSize="30" FontAttributes="Bold" TextColor="#DDD0C8" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Image Source="city.png" VerticalOptions="Center" Margin="30,0">
+                    <Image.Triggers>
+                        <DataTrigger Binding="{Binding HasAddress}" Value="true" TargetType="Image">
+                            <Setter Property="IsVisible" Value="false"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding HasAddress}" Value="false" TargetType="Image">
+                            <Setter Property="IsVisible" Value="true"/>
+                        </DataTrigger>
+                    </Image.Triggers>
+                </Image>
+                <Button Margin="20,20" Text="Добавить адрес" TextColor="#DDD0C8" TextTransform="None" FontSize="27" BackgroundColor="Black" CornerRadius="40" Command="{Binding AddAddressCommand}">
+                    <Button.Triggers>
+                        <DataTrigger Binding="{Binding HasAddress}" Value="true" TargetType="Button">
+                            <Setter Property="IsVisible" Value="false"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding HasAddress}" Value="false" TargetType="Button">
+                            <Setter Property="IsVisible" Value="true"/>
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+            </StackLayout>
+
+            <StackLayout>
+                <StackLayout.Triggers>
+                    <DataTrigger Binding="{Binding HasAddress}" Value="true" TargetType="StackLayout">
+                        <Setter Property="IsVisible" Value="true"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding HasAddress}" Value="false" TargetType="StackLayout">
+                        <Setter Property="IsVisible" Value="false"/>
+                    </DataTrigger>
+                </StackLayout.Triggers>
+
+                <StackLayout BackgroundColor="Black" Orientation="Horizontal" Margin="20,0,20,0" Padding="7">
+                    <StackLayout>
+                        <Label Text="{Binding Address.City}" TextColor="#DDD0C8" FontSize="25"/>
+                        <StackLayout Orientation="Horizontal" Margin="0,-10,0,0">
+                            <Label Text="{Binding Address.Street}" TextColor="#DDD0C8" FontSize="25"/>
+                            <Label Margin="-5,0,0,0" Text="," TextColor="#DDD0C8" FontSize="25"/>
+                            <Label Text="{Binding Address.House}" TextColor="#DDD0C8" FontSize="25"/>
+                            <Label Margin="-5,0,0,0" Text="," TextColor="#DDD0C8" FontSize="25">
+                                <Label.Triggers>
+                                    <DataTrigger Binding="{Binding Address.Flat}" Value="" TargetType="Label">
+                                        <Setter Property="IsVisible" Value="false"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label Text="{Binding Address.Flat}" TextColor="#DDD0C8" FontSize="25">
+                                <Label.Triggers>
+                                    <DataTrigger Binding="{Binding Address.Flat}" Value="" TargetType="Label">
+                                        <Setter Property="IsVisible" Value="false"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button Text="Счётчики" Command="{Binding MetersCommand}" TextColor="Black" TextTransform="None" FontSize="25" Margin="10,0,0,0" Padding="10,0" Background="#DDD0C8" CornerRadius="10"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <ListView x:Name="list" ItemsSource="{Binding Dates}" HasUnevenRows="True" SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout>
+                                            <StackLayout BackgroundColor="Black" Margin="0,10,0,0">
+                                                <Label Margin="25,5" Text="{Binding Name}" FontSize="25" TextColor="#DDD0C8"/>
+                                            </StackLayout>
+                                            <StackLayout BindableLayout.ItemsSource="{Binding Services}">
+                                                <BindableLayout.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackLayout Orientation="Horizontal" Padding="20,5">
+                                                            <StackLayout.GestureRecognizers>
+                                                                <TapGestureRecognizer Command="{Binding BindingContext.ServiceCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding Id}"/>
+                                                            </StackLayout.GestureRecognizers>
+                                                            
+                                                            <Image Source="false1.png" HeightRequest="45">
+                                                                <Image.GestureRecognizers>
+                                                                    <TapGestureRecognizer Command="{Binding BindingContext.SelectingCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding Id}"/>
+                                                                </Image.GestureRecognizers>
+                                                            </Image>
+                                                            <Image Source="true1.png" HeightRequest="30" Margin="-44,-10,0,0">
+                                                                <Image.Triggers>
+                                                                    <DataTrigger Binding="{Binding IsSelect}" Value="true" TargetType="Image">
+                                                                        <Setter Property="IsVisible" Value="true"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding IsSelect}" Value="false" TargetType="Image">
+                                                                        <Setter Property="IsVisible" Value="false"/>
+                                                                    </DataTrigger>
+                                                                </Image.Triggers>
+                                                            </Image>
+                                                            <StackLayout VerticalOptions="Center">
+                                                                <StackLayout.Triggers>
+                                                                    <DataTrigger Binding="{Binding IsSelect}" Value="true" TargetType="StackLayout">
+                                                                        <Setter Property="Margin" Value="6.8,0,0,0"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding IsSelect}" Value="false" TargetType="StackLayout">
+                                                                        <Setter Property="Margin" Value="0,0,0,0"/>
+                                                                    </DataTrigger>
+                                                                </StackLayout.Triggers>
+                                                                <Label Text="{Binding Company}" FontSize="25" TextColor="Black"/>
+                                                                <Label Margin="5,-7,0,0" Text="{Binding Category.Name}" FontSize="20" TextColor="Black"/>
+                                                            </StackLayout>
+                                                            <Label Text="{Binding Amount}" FontSize="25" TextColor="Black" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                                                            <Label Margin="-5,0,0,0" Text="₽" FontSize="25" TextColor="Black" VerticalOptions="Center"/>
+                                                        </StackLayout>
+                                                    </DataTemplate>
+                                                </BindableLayout.ItemTemplate>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button Margin="20,20" Text="{Binding TextButton}" TextColor="#DDD0C8" TextTransform="None" FontSize="27" BackgroundColor="Black" CornerRadius="40" Command="{Binding PayCommand}">
+                        <Button.Triggers>
+                            <DataTrigger Binding="{Binding Show}" Value="true" TargetType="Button">
+                                <Setter Property="IsVisible" Value="true"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Show}" Value="false" TargetType="Button">
+                                <Setter Property="IsVisible" Value="false"/>
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                </StackLayout>
+
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

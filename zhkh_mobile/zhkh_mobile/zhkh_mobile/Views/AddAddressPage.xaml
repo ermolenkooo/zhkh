@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:zhkh_mobile.ViewModels"
+             x:Class="zhkh_mobile.Views.AddAddressPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="True"
+             BackgroundColor="#DDD0C8">
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="Black" VerticalOptions="Start" Padding="15,10">
+                <Image Source="arrow.png" HeightRequest="45">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Margin="10,0" Text="Поиск по адресу" FontSize="30" FontAttributes="Bold" TextColor="#DDD0C8" VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="StartAndExpand" Margin="20">
+                <StackLayout BackgroundColor="Black" Margin="0,0,0,10">
+                    <Entry Margin="10,0" PlaceholderColor="#DDD0C8" FontSize="27" Placeholder="Населённый пункт" Text="{Binding City}" TextColor="#DDD0C8" BackgroundColor="Transparent"/>
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Black" Margin="0,0,0,10">
+                    <Entry Margin="10,0" PlaceholderColor="#DDD0C8" FontSize="27" Placeholder="Улица" Text="{Binding Street}" TextColor="#DDD0C8" BackgroundColor="Transparent"/>
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Black" Margin="0,0,0,10">
+                    <Entry Margin="10,0" PlaceholderColor="#DDD0C8" FontSize="27" Placeholder="Дом" Text="{Binding House}" TextColor="#DDD0C8" BackgroundColor="Transparent"/>
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Black" >
+                    <Entry Margin="10,0" PlaceholderColor="#DDD0C8" FontSize="27" Placeholder="Квартира" Text="{Binding Flat}" TextColor="#DDD0C8" BackgroundColor="Transparent"/>
+                </StackLayout>
+                <Label Text="Если вы живёте в частном доме, оставьте поле Квартира пустым" FontSize="15" FontAttributes="None" TextColor="Black"/>
+
+                <Button Margin="10,20" Text="Добавить адрес" TextColor="#DDD0C8" TextTransform="None" FontSize="27" BackgroundColor="Black" CornerRadius="40" Command="{Binding AddAddressCommand}">
+                    <Button.Triggers>
+                        <DataTrigger Binding="{Binding Show}" Value="true" TargetType="Button">
+                            <Setter Property="IsVisible" Value="true"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Show}" Value="false" TargetType="Button">
+                            <Setter Property="IsVisible" Value="false"/>
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
