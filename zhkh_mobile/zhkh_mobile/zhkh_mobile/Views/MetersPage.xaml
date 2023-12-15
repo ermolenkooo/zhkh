@@ -25,7 +25,7 @@
                             <ViewCell>
                                 <ViewCell.View>
                                     <StackLayout>
-                                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                                             <Image HeightRequest="41" VerticalOptions="Center">
                                                 <Image.Triggers>
                                                     <DataTrigger Binding="{Binding Id_category}" Value="1" TargetType="Image">

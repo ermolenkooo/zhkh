@@ -15,6 +15,8 @@ namespace zhkh_mobile.ViewModels
 {
     public class HistoryViewModel : BaseViewModel
     {
+        public Command ServiceCommand { get; }
+
         private ObservableCollection<string> monthsList = new ObservableCollection<string>();
         public ObservableCollection<string> MonthsList
         {
@@ -95,6 +97,7 @@ namespace zhkh_mobile.ViewModels
 
         public HistoryViewModel()
         {
+            ServiceCommand = new Command(OnServiceClicked);
             GetData();
         }
 
@@ -149,6 +152,17 @@ namespace zhkh_mobile.ViewModels
                     values.Add(s);
                 Dates.Add(new Date { Name = str, Services = values });
             }
+        }
+
+        private async void OnServiceClicked(object obj)
+        {
+            /*for (int i = 0; i < Dates.Count; i++)
+                for (int j = 0; j < Dates[i].Services.Count; j++)
+                    if (Dates[i].Services[j].Id == (int)obj)
+                    {
+                        await Navigation.PushAsync(new ServicePage(Dates[i].Services[j]));
+                        return;
+                    }*/
         }
     }
 }

@@ -13,7 +13,7 @@ namespace zhkh_mobile.Models
         private string number;
         private int id_category;
         private DateTime date;
-        private int reading;
+        private int? reading;
         private MeterCategory category;
         private int? newReading;
         private string textDate;
@@ -69,7 +69,7 @@ namespace zhkh_mobile.Models
             }
         }
 
-        public int Reading
+        public int? Reading
         {
             get { return reading; }
             set

@@ -49,8 +49,16 @@ namespace zhkh_mobile.ViewModels
 
             foreach (var m in list)
             {
-                m.TextDate = m.Date.ToString("d");
-                m.TextReading = m.Reading.ToString() + " " + m.Category.Unit;
+                if (m.Reading != null)
+                {
+                    m.TextDate = m.Date.ToString("d");
+                    m.TextReading = m.Reading.ToString() + " " + m.Category.Unit;
+                }
+                else
+                {
+                    m.TextDate = "";
+                    m.TextReading = "";
+                }
                 Meters.Add(m);
             }
         }
