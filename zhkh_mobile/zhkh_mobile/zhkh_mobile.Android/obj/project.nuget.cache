@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PMcMubmJB2ZUKBKo8Wt588MCeY9k1NyXeJgQ6fx07fUqSh3LXM+ldNbQXtEzfkfVpm9p2o/pfuLXO1QzQcacjQ==",
+  "dgSpecHash": "kA7sF4deIoK/ux/A5T//SpERgx9nK1OAePYL+pKPkSntCFo1+YS66KhRBi+5XVdOfvH2RAMPA7lO/+MZKF8MQA==",
   "success": true,
   "projectFilePath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.Android\\zhkh_mobile.Android.csproj",
   "expectedPackageFiles": [
@@ -70,12 +70,5 @@
     "C:\\Users\\dasha\\.nuget\\packages\\xamarin.google.android.material\\1.4.0.2\\xamarin.google.android.material.1.4.0.2.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.0.25.124:8080/api/odata'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  "logs": []
 }

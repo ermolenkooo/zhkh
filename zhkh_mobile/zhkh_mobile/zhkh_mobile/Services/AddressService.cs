@@ -11,17 +11,35 @@ namespace zhkh_mobile.Services
 {
     public class AddressService
     {
+        string Url = App.ip + "address";
+        // настройки для десериализации для нечувствительности к регистру символов
+        JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+        };
+       
         public async Task<Address> GetAddressOfUser(int id)
         {
-            if (id == 1)
-                return new Address { Id = 1, City = "Иваново", Street = "Ленина", House = "12", Flat = "44", Id_user = 1 };
-            else
+            var response = await App.client.GetAsync(Url + "/" + id);
+            if (response.StatusCode != HttpStatusCode.OK)
                 return null;
+
+            return JsonSerializer.Deserialize<Address>(
+               await response.Content.ReadAsStringAsync(), options);
         }
 
         public async Task<Address> AddAddress(Address address)
         {
-            return new Address { Id = 1, City = address.City, Street = address.Street, House = address.House, Flat = address.Flat, Id_user = address.Id_user };
+            var response = await App.client.PostAsync(Url,
+            new StringContent(
+                JsonSerializer.Serialize(address),
+                Encoding.UTF8, "application/json"));
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                return null;
+
+            return JsonSerializer.Deserialize<Address>(
+                await response.Content.ReadAsStringAsync(), options);
         }
     }
 }

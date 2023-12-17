@@ -1,0 +1,37 @@
+﻿using BLL.Interfaces;
+using BLL.Models;
+using BLL;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Data;
+using System.Threading.Tasks;
+using System;
+using BLL.Operations;
+using System.IO;
+
+namespace zhkh_server.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CategoriesController : ControllerBase
+    {
+        IDbCrud crudServ;
+        public CategoriesController()
+        {
+            crudServ = new DbDataOperations();
+        }
+
+        [HttpGet("service/{id}")]
+        public IActionResult GetServiceCategory([FromRoute] int id)
+        {
+            return Ok(crudServ.GetServiceCategory(id));
+        }
+
+        [HttpGet("meter/{id}")]
+        public IActionResult GetMeterCategory([FromRoute] int id)
+        {
+            return Ok(crudServ.GetMeterCategory(id));
+        }
+    }
+}

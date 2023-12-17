@@ -4,6 +4,40 @@
     "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_server\\zhkh_server.csproj": {}
   },
   "projects": {
+    "D:\\университет\\магистратура\\садыков\\zhkh\\BLL\\BLL.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\университет\\магистратура\\садыков\\zhkh\\BLL\\BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh\\BLL\\BLL.csproj",
+        "frameworks": {
+          "net481": {
+            "projectReferences": {
+              "D:\\университет\\магистратура\\садыков\\zhkh\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh\\DAL\\DAL.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net481": {}
+      }
+    },
+    "D:\\университет\\магистратура\\садыков\\zhkh\\DAL\\DAL.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\университет\\магистратура\\садыков\\zhkh\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh\\DAL\\DAL.csproj",
+        "frameworks": {
+          "net481": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net481": {}
+      }
+    },
     "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_server\\zhkh_server.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,13 +61,16 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "http://10.0.25.124:8080/api/odata": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\университет\\магистратура\\садыков\\zhkh\\BLL\\BLL.csproj": {
+                "projectPath": "D:\\университет\\магистратура\\садыков\\zhkh\\BLL\\BLL.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

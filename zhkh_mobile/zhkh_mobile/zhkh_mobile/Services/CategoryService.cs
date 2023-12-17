@@ -11,27 +11,36 @@ namespace zhkh_mobile.Services
 {
     public class CategoryService
     {
+        string Url = App.ip + "categories/";
+        // настройки для десериализации для нечувствительности к регистру символов
+        JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+        };
+
         public async Task<ServiceCategory> GetServiceCategory(int id)
         {
-            switch (id)
-            {
-                case 1: return new ServiceCategory { Id = 1, Name = "Водоснабжение" };
-                case 2: return new ServiceCategory { Id = 2, Name = "Квартплата" };
-                case 3: return new ServiceCategory { Id = 3, Name = "Охрана" };
-                case 4: return new ServiceCategory { Id = 4, Name = "Вывоз мусора" };
-                default: return null;
-            }
+            var response = await App.client.GetAsync(Url + "service/" + id);
+            if (response.StatusCode != HttpStatusCode.OK)
+                return null;
+
+            return JsonSerializer.Deserialize<ServiceCategory>(
+               await response.Content.ReadAsStringAsync(), options);
         }
 
         public async Task<MeterCategory> GetMeterCategory(int id)
         {
-            switch (id)
-            {
-                case 1: return new MeterCategory { Id = 1, Name = "Электроэнергия", Unit = "кВт/ч" };
-                case 2: return new MeterCategory { Id = 2, Name = "Холодная вода", Unit = "м³" };
-                case 3: return new MeterCategory { Id = 3, Name = "Горячая вода", Unit = "м³" };
-                default: return null;
-            }
+            var response = await App.client.GetAsync(Url + "meter/" + id);
+            if (response.StatusCode != HttpStatusCode.OK)
+                return null;
+
+            var res =  JsonSerializer.Deserialize<MeterCategory>(
+               await response.Content.ReadAsStringAsync(), options);
+
+            if (res.Unit == "м")
+                res.Unit += "³";
+
+            return res;
         }
     }
 }

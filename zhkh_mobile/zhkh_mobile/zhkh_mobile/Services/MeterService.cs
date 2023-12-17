@@ -11,50 +11,32 @@ namespace zhkh_mobile.Services
 {
     public class MeterService
     {
+        string Url = App.ip + "meter/";
+        // настройки для десериализации для нечувствительности к регистру символов
+        JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+        };
+
         private CategoryService categoryService = new CategoryService();
 
         public async Task<List<Meter>> GetMetersOfAddress(int id)
         {
-            List<Meter> meters = new List<Meter>();
+            string result = await App.client.GetStringAsync(Url + id);
+            var res = JsonSerializer.Deserialize<List<Meter>>(result, options);
 
-            meters.Add(new Meter { 
-                Id = 1, 
-                Id_address = id,
-                Number = "№123400098",
-                Id_category = 1,
-                Date = new DateTime(2023, 9, 25),
-                Reading = 12312,
-                Category = await categoryService.GetMeterCategory(1)
-            });
+            for (int i = 0; i < res.Count; i++)
+                res[i].Category = await categoryService.GetMeterCategory(res[i].Id_category);
 
-            meters.Add(new Meter
-            {
-                Id = 2,
-                Id_address = id,
-                Number = "№123400098",
-                Id_category = 2,
-                Date = new DateTime(2023, 9, 25),
-                Reading = 345,
-                Category = await categoryService.GetMeterCategory(2)
-            });
-
-            meters.Add(new Meter
-            {
-                Id = 3,
-                Id_address = id,
-                Number = "№123400098",
-                Id_category = 3,
-                Date = new DateTime(2023, 9, 25),
-                Reading = null,
-                Category = await categoryService.GetMeterCategory(3)
-            });
-
-            return meters;
+            return res;
         }
 
         public async void UpdateReading(int id, int reading)
         {
-
+            await App.client.PutAsync(Url + id + "/" + reading, null);
+                //new StringContent(
+                //    JsonSerializer.Serialize(reading),
+                //    Encoding.UTF8, "application/json"));
         }
     }
 }

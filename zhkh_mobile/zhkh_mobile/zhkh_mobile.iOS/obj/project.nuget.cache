@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0s5hB7DuPXKTPdalTDUWV+gMDkyoTwTA6x2K0mXG8uheYZCBsGLAib9+btMEIkhyjYf5gTwoaU6xmr6cioK2fw==",
+  "dgSpecHash": "YQGfjjpjkv7X63GREOQWw6RtYSAzMmw6Ti0O1/+WSKLGyATK1m9CzFf7M2IWVr2Kz8pvT3U4EH1ijg7QsWow9A==",
   "success": true,
   "projectFilePath": "D:\\университет\\магистратура\\садыков\\zhkh\\zhkh_mobile\\zhkh_mobile\\zhkh_mobile.iOS\\zhkh_mobile.iOS.csproj",
   "expectedPackageFiles": [
@@ -15,12 +15,5 @@
     "C:\\Users\\dasha\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.0.25.124:8080/api/odata'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  "logs": []
 }

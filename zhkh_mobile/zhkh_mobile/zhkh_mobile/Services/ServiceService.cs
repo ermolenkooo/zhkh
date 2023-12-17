@@ -7,162 +7,51 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using zhkh_mobile.Models;
 using System.ComponentModel;
+using Xamarin.Forms;
 
 namespace zhkh_mobile.Services
 {
     public class ServiceService
     {
+        string Url = App.ip + "service/";
+        // настройки для десериализации для нечувствительности к регистру символов
+        JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+        };
+
         CategoryService categoryService = new CategoryService();
 
         public async Task<int> UpdateStatusOfService(int id)
         {
+            var response = await App.client.PutAsync(Url + id, null);
+            //new StringContent(
+            //        JsonSerializer.Serialize(id),
+            //        Encoding.UTF8, "application/json"));
+
             return 0;
         }
 
         public async Task<List<Service>> GetUnpaidServices(int id)
         {
-            List<Service> services = new List<Service>();
-            services.Add(new Service
-            {
-                Id = 1,
-                Id_address = id,
-                Id_category = 1,
-                IsSelect = false,
-                Status = false,
-                Year = 2023,
-                Month = "октябрь",
-                Company = "Горводоканал",
-                Account = "111 111",
-                Amount = 1000.0,
-                Category = await categoryService.GetServiceCategory(1)
-            });
+            string result = await App.client.GetStringAsync(Url + "unpaid/" + id);
+            var res = JsonSerializer.Deserialize<List<Service>>(result, options);
 
-            services.Add(new Service
-            {
-                Id = 2,
-                Id_address = id,
-                Id_category = 2,
-                IsSelect = false,
-                Status = false,
-                Year = 2023,
-                Month = "октябрь",
-                Company = "УК Просторы",
-                Account = "111 111",
-                Amount = 2000.0,
-                Category = await categoryService.GetServiceCategory(2)
-            });
+            for (int i = 0; i < res.Count; i++)
+                res[i].Category = await categoryService.GetServiceCategory(res[i].Id_category);
 
-            services.Add(new Service
-            {
-                Id = 3,
-                Id_address = id,
-                Id_category = 3,
-                IsSelect = false,
-                Status = false,
-                Year = 2023,
-                Month = "октябрь",
-                Company = "Гарант",
-                Account = "111 111",
-                Amount = 500.0,
-                Category = await categoryService.GetServiceCategory(3)
-            });
-
-            services.Add(new Service
-            {
-                Id = 4,
-                Id_address = id,
-                Id_category = 4,
-                IsSelect = false,
-                Status = false,
-                Year = 2023,
-                Month = "ноябрь",
-                Company = "Чистый город",
-                Account = "111 111",
-                Amount = 100.0,
-                Category = await categoryService.GetServiceCategory(4)
-            });
-
-            return services;
+            return res;
         }
 
         public async Task<List<Service>> GetPaidServices(int id)
         {
-            List<Service> services = new List<Service>();
-            services.Add(new Service
-            {
-                Id = 1,
-                Id_address = id,
-                Id_category = 1,
-                IsSelect = false,
-                Status = true,
-                Year = 2023,
-                Month = "сентябрь",
-                Company = "Горводоканал",
-                Account = "111 111",
-                Amount = 2310,
-                Category = await categoryService.GetServiceCategory(1)
-            });
+            string result = await App.client.GetStringAsync(Url + "paid/" + id);
+            var res = JsonSerializer.Deserialize<List<Service>>(result, options);
 
-            services.Add(new Service
-            {
-                Id = 2,
-                Id_address = id,
-                Id_category = 2,
-                IsSelect = false,
-                Status = true,
-                Year = 2023,
-                Month = "октябрь",
-                Company = "УК Просторы",
-                Account = "111 111",
-                Amount = 2000.0,
-                Category = await categoryService.GetServiceCategory(2)
-            });
+            for (int i = 0; i < res.Count; i++)
+                res[i].Category = await categoryService.GetServiceCategory(res[i].Id_category);
 
-            services.Add(new Service
-            {
-                Id = 3,
-                Id_address = id,
-                Id_category = 3,
-                IsSelect = false,
-                Status = true,
-                Year = 2023,
-                Month = "сентябрь",
-                Company = "Гарант",
-                Account = "111 111",
-                Amount = 500.0,
-                Category = await categoryService.GetServiceCategory(3)
-            });
-
-            services.Add(new Service
-            {
-                Id = 4,
-                Id_address = id,
-                Id_category = 4,
-                IsSelect = false,
-                Status = true,
-                Year = 2023,
-                Month = "сентябрь",
-                Company = "Чистый город",
-                Account = "111 111",
-                Amount = 120.0,
-                Category = await categoryService.GetServiceCategory(4)
-            });
-
-            services.Add(new Service
-            {
-                Id = 2,
-                Id_address = id,
-                Id_category = 2,
-                IsSelect = false,
-                Status = true,
-                Year = 2023,
-                Month = "сентябрь",
-                Company = "УК Просторы",
-                Account = "111 111",
-                Amount = 2000.0,
-                Category = await categoryService.GetServiceCategory(2)
-            });
-            return services;
+            return res;
         }
     }
 }

@@ -42,3 +42,11 @@ D:\университет\магистратура\садыков\zhkh\zhkh_serv
 D:\университет\магистратура\садыков\zhkh\zhkh_server\obj\Debug\net5.0\zhkh_server.genruntimeconfig.cache
 D:\университет\магистратура\садыков\zhkh\zhkh_server\obj\Debug\net5.0\ref\zhkh_server.dll
 D:\университет\магистратура\садыков\zhkh\zhkh_server\obj\Debug\net5.0\zhkh_server.csproj.CopyComplete
+D:\университет\магистратура\садыков\zhkh\zhkh_server\bin\Debug\net5.0\packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.runtimeconfig.json
+D:\университет\магистратура\садыков\zhkh\zhkh_server\bin\Debug\net5.0\BLL.dll
+D:\университет\магистратура\садыков\zhkh\zhkh_server\bin\Debug\net5.0\DAL.dll
+D:\университет\магистратура\садыков\zhkh\zhkh_server\bin\Debug\net5.0\EntityFramework.dll
+D:\университет\магистратура\садыков\zhkh\zhkh_server\bin\Debug\net5.0\BLL.pdb
+D:\университет\магистратура\садыков\zhkh\zhkh_server\bin\Debug\net5.0\DAL.pdb
+D:\университет\магистратура\садыков\zhkh\zhkh_server\bin\Debug\net5.0\DAL.dll.config
+D:\университет\магистратура\садыков\zhkh\zhkh_server\bin\Debug\net5.0\EntityFramework.xml

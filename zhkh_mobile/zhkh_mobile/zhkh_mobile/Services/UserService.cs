@@ -11,20 +11,39 @@ namespace zhkh_mobile.Services
 {
     public class UserService
     {
+        string Url = App.ip + "user"; 
+        // настройки для десериализации для нечувствительности к регистру символов
+        JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+        };
+
         public async Task<User> Reg(User user)
         {
-            if (user.Phone == "88005553535") 
+            var response = await App.client.PostAsync(Url,
+                new StringContent(
+                    JsonSerializer.Serialize(user),
+                    Encoding.UTF8, "application/json"));
+
+            if (response.StatusCode != HttpStatusCode.OK)
                 return null;
-            else
-                return new User { Id = 1, Phone = "88005553535", Password = "123" };
+
+            return JsonSerializer.Deserialize<User>(
+                await response.Content.ReadAsStringAsync(), options);
         }
 
         public async Task<User> Login(User user)
         {
-            if (user.Phone == "88005553535" && user.Password == "123")
-                return new User { Id = 1, Phone = "88005553535", Password = "123" };
-            else
+            var response = await App.client.PostAsync(Url + "/" + "login",
+                new StringContent(
+                    JsonSerializer.Serialize(user),
+                    Encoding.UTF8, "application/json"));
+
+            if (response.StatusCode != HttpStatusCode.OK)
                 return null;
+
+            return JsonSerializer.Deserialize<User>(
+                await response.Content.ReadAsStringAsync(), options);
         }
     }
 }
